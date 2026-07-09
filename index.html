@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        .box {
+            background: white;
+            width: 350px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+        }
+        button {
+            padding: 10px 20px;
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        li {
+            text-align: left;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Student Management System</h2>
+
+    <input type="text" id="name" placeholder="Enter Student Name">
+    <button onclick="addStudent()">Add Student</button>
+
+    <h3>Student List</h3>
+    <ul id="list"></ul>
+</div>
+
+<script>
+function addStudent() {
+    let name = document.getElementById("name").value;
+
+    if(name === "") {
+        alert("Enter Student Name");
+        return;
+    }
+
+    let li = document.createElement("li");
+    li.innerHTML = name;
+
+    document.getElementById("list").appendChild(li);
+
+    document.getElementById("name").value = "";
+}
+</script>
+
+</body>
+</html>
